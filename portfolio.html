@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nidhi Sapaliga - Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@700&family=Caveat:wght@600&family=Bungee+Shade&family=Cutive+Mono&family=Solitreo&family=Inter:wght@400;500&family=Sansita+One&family=Chilanka&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* GLOBAL */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Sitka", serif;
+    }
+    section {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background-color: #fffbef;
+      text-align: center;
+      color: #2C5C8C;
+      padding-bottom: 170px;
+    }
+    .hero .navbar {
+      margin: 25px auto;
+      padding: 10px 40px;
+      background: #FFFDF6;
+      
+      border-radius: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 30px;
+      box-shadow: 4px 4px 0 #2C5C8C;
+      font-size: 35px;
+    }
+    .hero .navbar span {
+      font-size: 32px;
+    }
+    .hero .navbar a {
+      text-decoration: none;
+      color: #2C5C8C;
+      font-size: 18px;
+    }
+    .hero .greeting {
+      color: #5D9CE0;
+      font-size: 37px;
+      margin-top: 70px;
+    }
+    .hero .greeting span {
+      font-size: 26px;
+      display: inline-block;
+      transform: rotate(20deg);
+    }
+    .hero .name {
+      font-family: "Gorditas", cursive;
+      font-size: 150px;
+      margin: 10px 0;
+      color: #2C5C8C;
+    }
+    .hero .subtitle {
+      font-size: 37px;
+      color: #5D9CE0;
+      position: relative;
+      display: inline-block;
+    }
+    .hero .subtitle::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: #2C5C8C;
+      border-radius: 2px;
+    }
+    .hero .smiley {
+      font-size: 22px;
+      margin-left: 10px;
+    }
+    .hero .resume-btn {
+      margin-top: 30px;
+      background: #A6D4FF;
+      border: none;
+      border-radius: 40px;
+      padding: 18px 40px;
+      font-size: 20px;
+      color: #2C5C8C;
+      cursor: pointer;
+      box-shadow: 7px 7px 0 #2C5C8C;
+      transition: all 0.3s ease;
+    }
+    .hero .resume-btn:hover {
+      background: #5D9CE0;
+      color: white;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      background-color: #0A1D3A;
+      color: white;
+      display: flex;
+      align-items: center;
+      
+      padding: 170px;
+      
+    }
+    .about-text {
+      max-width: 600px;
+      line-height: 1.8;
+    }
+    .about-text h2 {
+      font-size: 70px;
+      color: #9ac0fd;
+      margin-bottom: 50px;
+      
+    }
+    .about-text p {
+      font-size: 18px;
+    }
+    .about-text u {
+      text-decoration: underline;
+      text-decoration-color: #76A9FA;
+    }
+    
+
+    /* EDUCATION SECTION */
+    .education {
+      background: #f7f5ee;
+      font-family: 'Cutive Mono', monospace;
+      padding: 50px;
+    }
+    .education h2 {
+      font-family: 'Bungee Shade', cursive;
+      font-size: 50px;
+      margin-bottom: 30px;
+      color: #0c013e;
+    }
+    .education ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+    .highlight-circle { position: relative; display: inline-block; }
+    .highlight-circle::before {
+      content: "";
+      position: absolute;
+      top: -5px; left: -10px;
+      width: 100%; height: 120%;
+      border: 2px solid #3d7fff;
+      border-radius: 50%;
+      transform: rotate(-5deg);
+    }
+    
+    
+
+    /* SKILLS SECTION */
+    .skills {
+      background: #f9f7f2;
+      padding: 50px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .skills-left { max-width: 35%; }
+    .skills-left h2 {
+      font-size: 48px; font-weight: bold;
+      margin-bottom: 20px; color: #062240;
+    }
+    .skills-left p {
+      font-size: 18px; line-height: 1.6; color: #6d6d6d;
+    }
+    .skills-right {
+      display: flex; flex-wrap: wrap;
+      gap: 20px; max-width: 55%; justify-content: center;
+    }
+    .skill-box {
+      background: #3ba4f9; color: white;
+      padding: 20px 25px; font-size: 18px;
+      border-radius: 20% 40% 30% 50% / 40% 30% 50% 20%;
+      box-shadow: 5px 5px 0px #00133c;
+      text-align: center;
+      font-family: "Solitreo", cursive;
+      min-width: 150px;
+    }
+
+    /* WORK SECTION */
+    .work {
+      background-color: #041233;
+      font-family: "Inter", sans-serif;
+      color: white;
+      padding: 50px 80px;
+      text-align: center;
+    }
+    .work h2 {
+      font-family: "Sitka Text", serif;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .work-card {
+      background: #f2f2f2;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 400px;
+      text-align: left;
+      position: relative;
+    }
+    .work-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .work-card p {
+      font-size: 15px; color: #000; line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .card-number {
+      font-family: "Sansita One", cursive;
+      font-size: 28px; color: #000;
+      position: absolute; bottom: 15px; left: 15px;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: url("https://i.ibb.co/mqfyXjV/stars-bg.jpg") no-repeat center center/cover;
+      border-radius: 20px;
+      padding: 50px 20px;
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+    .contact h2 {
+      font-family: "Chilanka", cursive;
+      font-size: 36px; margin: 0;
+    }
+    .contact p { font-size: 18px; margin: 10px 0 30px; }
+    .contact-icons {
+      display: flex; justify-content: center;
+      gap: 25px; margin-top: 20px;
+    }
+    .contact-icons a {
+      background: white; color: #041233;
+      font-size: 22px; width: 50px; height: 50px;
+      display: flex; justify-content: center; align-items: center;
+      border-radius: 10px; text-decoration: none;
+      transition: 0.3s;
+    }
+    .contact-icons a:hover {
+      background: #041233; color: white; border: 1px solid white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about, .skills { flex-direction: column; gap: 40px; }
+      .work-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="navbar">
+      <span>🌻</span>
+      <a href="#about">about</a>
+      <a href="#work">work</a>
+      <a href="#contact">contact</a>
+    </div>
+    <p class="greeting">hello<span>👋</span> there, I’m</p>
+    <h1 class="name">Nidhi Sapaliga</h1>
+    <p class="subtitle">your next favorite UI/UX Designer</p>
+    <span class="smiley">😊</span>
+    <div><button class="resume-btn">View My Resume</button></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>ABOUT ME</h2>
+      <p>
+        Hi! I’m so glad you’re here. I’m a <u>passionate UI/UX Designer</u> who loves creating clean, minimal, and intuitive designs that <u>make life easier</u> and more enjoyable. 
+        With a <u>background in marketing,</u> I bring a strong understanding of user behavior and business needs helping me design experiences that truly connect. 
+        I’m <u>super curious, always learning,</u> and excited to grow, collaborate, and design products that <u>make a real difference.</u>
+      </p>
+    </div>
+    
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education">
+    <div class="education-section">
+      <h2>EDUCATION</h2>
+      <ul>
+        <li><span class="highlight-circle">UI/UX Design</span> Course <br>Arena Animation, Thane.</li><br>
+        <li>Bachelors in Management Studies <br><span class="highlight-dotted">SIES College, Nerul.</span></li><br>
+        <li><span class="highlight-box">Higher Secondary Certificate</span> <br>ST. John The Baptist Jr. College, Thane.</li>
+      </ul>
+      
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills">
+    <div class="skills-left">
+      <h2>SKILLS</h2>
+      <p>here’s what I bring to the table to help you meet your goals.</p>
+    </div>
+    <div class="skills-right">
+      <div class="skill-box">UX Design</div>
+      <div class="skill-box">Adobe XD</div>
+      <div class="skill-box">Figma</div>
+      <div class="skill-box">Visual Design</div>
+      <div class="skill-box">Prototyping</div>
+      <div class="skill-box">User Research &amp; Analysis</div>
+      <div class="skill-box">Project Management</div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <h2>WORK</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="homezy.png" alt="Homezy App">
+        <p>Homezy is a smart home controller app that makes managing devices easy and simple. I also created a case study to share my design process and ideas.</p>
+        <div class="card-number">01</div>
+      </div>
+      <div class="work-card">
+        <img src="healthcart.png" alt="Health Cart App">
+        <p>Health Cart is a pharma app designed to be easy to understand and make your work simple from ordering medicines to consulting doctors, all in one place. I’ve also created a case study showcasing my design process.</p>
+        <div class="card-number">02</div>
+      </div>
+      <div class="work-card">
+        <img src="uts.png" alt="UTS App">
+        <p>I redesigned the UTS app to make ticket booking easier and more user-friendly. I’ve also created a case study to explain the process and solutions.</p>
+        <div class="card-number">03</div>
+      </div>
+      <div class="work-card">
+        <img src="aurum.png" alt="Aurum Watch Website">
+        <p>Aurum is a premium watch website designed for timeless, unisex styles combining elegance with a modern shopping experience.</p>
+        <div class="card-number">04</div>
+      </div>
+      <div class="work-card"><div class="card-number">05</div></div>
+      <div class="work-card"><div class="card-number">06</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>✨ Let’s Talk ✨</h2>
+    <p>-7385438698</p>
+    <div class="contact-icons">
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-solid fa-circle"></i></a>
+      <a href="mailto:example@email.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+</body>
+</html>

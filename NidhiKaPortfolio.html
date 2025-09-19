@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nidhi Sapaliga - UI/UX Designer Portfolio</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Global Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Sitka", serif;
+      scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    }
+
+    /* --- Hero Section Styles (from portfnameanimation.html) --- */
+    .hero {
+      height: 100vh;
+      background: url("Screenshot 2025-09-18 205730.png") no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .navbar {
+      width: 750px;
+      height: 80px;
+      background: linear-gradient(to right, #000E24, #001F6E);
+      border: 0.5px solid white;
+      border-radius: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    .logo {
+      width: 55px;
+      height: 55px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      transform: scale(1.15);
+      color: #7da2d4;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #7da2d4;
+      font-family: "Sitka", serif;
+      margin-top: 20px;
+    }
+
+    .hero-content h3 {
+      font-size: 40px;
+      font-weight: normal;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .hero-content h1 {
+      font-family: 'Gorditas', cursive;
+      font-size: 150px;
+      color: #fff;
+      margin: 0 0 20px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .hero-content p {
+      font-size: 40px;
+      font-family: "Sitka", serif;
+      color: #7da2d4;
+      margin: 0 0 40px 0;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .line-image {
+      width: 300px;
+      height: auto;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    /* --- About Section Styles (from AboutMe.html) --- */
+    .about-section {
+      background: 
+        
+        url("Screenshot 2025-09-18 211307.png") 
+        no-repeat center center/cover;
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 50px 0;
+      box-sizing: border-box;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .about-text {
+      flex: 1 1 50%;
+      color: #000E24;
+      padding: 20px;
+    }
+
+    .about-text h2 {
+      font-size: 60px;
+      color: #3671ca;
+      margin-top: 0;
+    }
+
+    .about-text p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .about-image {
+      flex: 1 1 40%;
+      text-align: center;
+      position: relative;
+    }
+
+    .slideshow-container {
+      width: 300px;
+      height: 420px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .slideshow-container::before,
+    .slideshow-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 25px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    .slideshow-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0,0,0,0));
+    }
+
+    .slideshow-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0,0,0,0));
+    }
+
+    .slides {
+      display: flex;
+      width: calc(300px * 12);
+      height: 100%;
+      animation: slideAnimation 35s linear infinite;
+    }
+
+    .slides img {
+      width: 300px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    @keyframes slideAnimation {
+      from { transform: translateX(0); }
+      to { transform: translateX(-1800px); }
+    }
+
+    .resume-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 52px;
+      background: #4d9df0;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 5px 7px #03076d;
+      transition: background 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      background: #3174c1;
+    }
+
+    .doodle {
+      position: absolute;
+      bottom: -70px;
+      left: 40px;
+      width: 100px;
+      animation: moveDoodle 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveDoodle {
+      from { transform: translateX(0); }
+      to { transform: translateX(10px); }
+    }
+
+    /* --- Skills Section Styles (from skill.html) --- */
+    .skills-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      min-height: 100vh;
+      box-sizing: border-box;
+      background: url("Screenshot 2025-09-18 215125.png") no-repeat center center/cover;
+    }
+
+    .skills-text {
+      flex: 1;
+      max-width: 45%;
+      padding-left: 50px;
+    }
+
+    .skills-text h2 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+      color: #0e58a1;
+    }
+
+    .skills-text p {
+      font-size: 2rem;
+      color: #474747;
+      line-height: 1.2;
+    }
+
+    .skills-visual {
+      flex: 1;
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skills-placeholder img {
+      width: 100%;
+      max-width: 1500px;
+      height: auto;
+      display: block;
+    }
+
+    /* --- Work Section Styles (from work.html) --- */
+    .work-section {
+      padding: 50px 15%;
+      text-align: center;
+      background: #0a1630;
+      color: #02508c;
+    }
+
+    .work-section h2 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ECECEC;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-img {
+      flex: 1 1 50%;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      display: block;
+    }
+
+    .project-text {
+      flex: 1 1 45%;
+      padding: 20px;
+    }
+
+    .project-text h3 {
+      font-size: 3.2rem;
+      margin-bottom: 0px;
+    }
+
+    .project-text p {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #120335;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 80px;
+      margin-top: 200px;
+    }
+
+    .btn {
+      padding: 10px 40px;
+      border-radius: 11px;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      background: #2b72e4;
+      color: white;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #174ba0;
+    }
+
+    .rectangles {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rectangle {
+      position: relative;
+      background: white;
+      height: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rectangle img {
+      width: 90%;
+      height: 90%;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: 0.3s ease;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .rectangle:hover img {
+      filter: brightness(60%);
+    }
+
+    .rectangle:hover .overlay {
+      opacity: 1;
+    }
+
+    /* --- Footer Section Styles (from footer.html) --- */
+    .contact-section {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      text-align: center;
+      color: white;
+      padding: 50px 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(ellipse at bottom, #020C27 0%, #090a0f 100%);
+      overflow: hidden;
+    }
+
+    .star-field {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkleStar 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkleStar {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 0.2; transform: scale(0.6); }
+    }
+
+    .contact-title {
+      font-size: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 100px;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .star-icon {
+      font-size: 55px;
+      color: transparent;
+      -webkit-text-stroke: 2px white;
+      animation: twinkleStar 2s infinite ease-in-out;
+    }
+
+    .contact-number {
+      font-size: 1.3rem;
+      margin-bottom: 70px;
+      display: block;
+      font-family: 'Inter', sans-serif;
+      z-index: 2;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .icon-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .icon-wrapper i {
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease, color 0.3s ease;
+    }
+
+    .icon-wrapper:nth-child(1) i:hover { color: #0A66C2; }
+    .icon-wrapper:nth-child(2) i:hover { color: #E4405F; }
+    .icon-wrapper:nth-child(3) i:hover { color: #f4b400; }
+
+    .icon-wrapper i:hover {
+      transform: scale(1.15);
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .icon-wrapper:hover .tooltip {
+      opacity: 1;
+    }
+
+    /* --- Responsive Adjustments (Combined) --- */
+    @media (max-width: 950px) {
+      .navbar {
+        width: 90%;
+        padding: 0 20px;
+      }
+      .nav-links {
+        gap: 30px;
+      }
+      .nav-links a {
+        font-size: 20px;
+      }
+      .skills-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .skills-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+        padding-left: 0;
+      }
+      .skills-visual {
+        max-width: 100%;
+      }
+      .skills-placeholder img {
+        width: 60%;
+        max-width: 220px;
+      }
+      .project-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .project-img, .project-text {
+        flex: 1 1 100%;
+      }
+      .rectangles {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content h3, .hero-content p {
+        font-size: 1.2rem;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-text, .about-image {
+        flex: 1 1 100%;
+      }
+      .doodle {
+        position: relative;
+        bottom: -10px;
+        left: auto;
+        margin: 10px auto;
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .rectangles {
+        grid-template-columns: 1fr;
+      }
+      .contact-title {
+        font-size: 2.2rem;
+      }
+      .icon-wrapper i {
+        font-size: 40px;
+      }
+      .contact-icons {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero" id="home">
+    <div class="navbar">
+      <div class="logo">
+        <img src="Group 226.png" alt="logo">
+      </div>
+      <div class="nav-links">
+        <a href="#about">about</a>
+        <a href="#work">work</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+    <div class="hero-content">
+      <h3>hello there, I’m</h3>
+      <h1>Nidhi Sapaliga</h1>
+      <p>your next favorite UI/UX Designer</p>
+      <img src="Group 228.png" alt="decorative line" class="line-image">
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>ABOUT ME</h2>
+        <p>
+          Hi! I’m so glad you’re here. I’m a passionate UI/UX Designer who loves 
+          creating clean, minimal, intuitive designs that make life easier 
+          and more enjoyable.
+        </p>
+        <p>
+          With a background in marketing, I bring a strong 
+          understanding of user behavior and business needs, helping me design 
+          experiences that truly connect.
+        </p>
+        <p>
+          I’m super curious, always learning, and excited to grow, collaborate, 
+          and design products that make a real difference.
+        </p>
+      </div>
+      <div class="about-image">
+        <div class="slideshow-container">
+          <div class="slides">
+            <img src="WhatsApp Image 2025-09-11 at 11.19.32 PM 1.jpg" alt="Profile 1">
+            <img src="6d8fd30a7380b1e14aff12dc938bc4ef.jpg" alt="Profile 2">
+            <img src="Screenshot 2025-09-13 151000.png" alt="Profile 3">
+            <img src="Screenshot 2025-09-13 151222.png" alt="Profile 4">
+            <img src="Screenshot 2025-09-13 151519.png" alt="Profile 5">
+            <img src="Screenshot 2025-09-13 152344.png" alt="Profile 6">
+            <img src="WhatsApp Image 2025-09-11 at 11.19.32 PM 1.jpg" alt="Profile 1">
+            <img src="6d8fd30a7380b1e14aff12dc938bc4ef.jpg" alt="Profile 2">
+            <img src="Screenshot 2025-09-13 151000.png" alt="Profile 3">
+            <img src="Screenshot 2025-09-13 151222.png" alt="Profile 4">
+            <img src="Screenshot 2025-09-13 151519.png" alt="Profile 5">
+            <img src="Screenshot 2025-09-13 152344.png" alt="Profile 6">
+          </div>
+        </div>
+        <a href="resume.png" class="resume-btn">View My Resume</a>
+        <img src="Group 232.png" alt="Doodle" class="doodle">
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section" id="skills">
+    <div class="skills-text">
+      <h2>SKILLS</h2>
+      <p>Here’s what I bring <br>to the table to help <br>you meet your goals.</p>
+    </div>
+    <div class="skills-visual">
+      <div class="skills-placeholder">
+        <img src="Group 237.png" alt="Skills Illustration">
+      </div>
+    </div>
+  </section>
+
+  <section class="work-section" id="work">
+    <h2>My Work</h2>
+    <div class="project-card">
+      <div class="project-img">
+        <img src="iPhone 14 & 15 Pro - 143.png" alt="Homezy App">
+      </div>
+      <div class="project-text">
+        <h3>Homezy</h3>
+        <p>Simplifying smart living with one easy control.</p>
+        <div class="btn-group">
+          <a href="h case s export.png" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=899-1740&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=899%3A1740" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <img src="Screenshot 2025-09-14 192858.png" alt="Health Cart App">
+      </div>
+      <div class="project-text">
+        <h3>Health Cart</h3>
+        <p>Medicines, prescriptions, and doctors—simplified in one app.</p>
+        <div class="btn-group">
+          <a href="hc case study export.png" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=509-369&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=509%3A369" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <img src="Screenshot 2025-09-14 192954.png" alt="UTS App Redesign">
+      </div>
+      <div class="project-text">
+        <h3>UTS App Redesign</h3>
+        <p>Cleaner, easier, more user-friendly ticket booking for Indian Railways.</p>
+        <div class="btn-group">
+          <a href="uts case study export.png" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=250-175&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=250%3A175" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-img">
+        <img src="Screenshot 2025-09-14 193043.png" alt="Aurum Watch Website">
+      </div>
+      <div class="project-text">
+        <h3>Aurum</h3>
+        <p>A premium unisex watch website with a clean and elegant UI.</p>
+        <div class="btn-group">
+          <a href="#" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/tUViqEost2StpSiMOkD0LS/aurum?page-id=0%3A1&node-id=1-2&t=5PmrUWXyVE7Yt5eE-0&scaling=scale-down&content-scaling=fixed" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+    <div class="rectangles">
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 124611.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=197-371&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=197%3A371" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125718.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=4-28&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=4%3A28" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125657.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=10-71&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=4%3A28" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125633.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=94-949&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=4%3A28" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125617.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=127-126&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=4%3A28" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125601.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=163-446&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-id=4%3A28" class="overlay">View on Figma</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="star-field">
+      <div class="star" style="top:10%; left:20%; width:3px; height:3px; animation-delay:0s;"></div>
+      <div class="star" style="top:40%; left:50%; width:2px; height:2px; animation-delay:1s;"></div>
+      <div class="star" style="top:70%; left:80%; width:4px; height:4px; animation-delay:0.5s;"></div>
+      <div class="star" style="top:30%; left:70%; width:2px; height:2px; animation-delay:2s;"></div>
+      <div class="star" style="top:60%; left:30%; width:3px; height:3px; animation-delay:1.5s;"></div>
+      <div class="star" style="top:15%; left:85%; width:2px; height:2px; animation-delay:2.5s;"></div>
+      <div class="star" style="top:25%; left:10%; width:2px; height:2px; animation-delay:1.2s;"></div>
+      <div class="star" style="top:50%; left:90%; width:3px; height:3px; animation-delay:0.8s;"></div>
+      <div class="star" style="top:80%; left:15%; width:4px; height:4px; animation-delay:1.8s;"></div>
+      <div class="star" style="top:75%; left:60%; width:2px; height:2px; animation-delay:0.4s;"></div>
+      <div class="star" style="top:5%; left:45%; width:3px; height:3px; animation-delay:2.3s;"></div>
+      <div class="star" style="top:35%; left:25%; width:2px; height:2px; animation-delay:0.6s;"></div>
+      <div class="star" style="top:55%; left:75%; width:3px; height:3px; animation-delay:1.4s;"></div>
+      <div class="star" style="top:65%; left:40%; width:4px; height:4px; animation-delay:2.1s;"></div>
+      <div class="star" style="top:85%; left:50%; width:2px; height:2px; animation-delay:0.9s;"></div>
+      <div class="star" style="top:20%; left:60%; width:3px; height:3px; animation-delay:1.7s;"></div>
+      <div class="star" style="top:45%; left:15%; width:2px; height:2px; animation-delay:2.6s;"></div>
+      <div class="star" style="top:90%; left:35%; width:3px; height:3px; animation-delay:0.7s;"></div>
+      <div class="star" style="top:10%; left:70%; width:2px; height:2px; animation-delay:1.9s;"></div>
+      <div class="star" style="top:5%; left:5%; width:3px; height:3px; animation-delay:2.8s;"></div>
+    </div>
+    <div class="contact-title">
+      <span class="star-icon">✦</span>
+      <span>Let’s Work Together</span>
+      <span class="star-icon">✦</span>
+    </div>
+    <span class="contact-number">-7385438698</span>
+    <div class="contact-icons">
+      <div class="icon-wrapper">
+        <a href="https://www.linkedin.com/in/nidhi-sapaliga-627042383/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <div class="tooltip">LinkedIn</div>
+      </div>
+      <div class="icon-wrapper">
+        <a href="https://www.instagram.com/_nidhi_sapaliga/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <div class="tooltip">Instagram</div>
+      </div>
+      <div class="icon-wrapper">
+        <a href="mailto:nidhisapaliga2003@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <div class="tooltip">E-mail</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Dark Hero</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Dark Hero Section */
+    .hero {
+      height: 100vh;
+      background: radial-gradient(circle at top left, #001233, #000814, #000000);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      font-family: "Sitka", serif;
+    }
+
+    /* Moving glowing blobs (nebula effect) */
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 40, 150, 0.5), transparent 70%);
+      animation: moveGlow 20s ease-in-out infinite alternate;
+      mix-blend-mode: screen;
+      filter: blur(120px);
+    }
+
+    .glow:nth-child(1) {
+      top: -200px;
+      left: -200px;
+      animation-delay: 0s;
+    }
+
+    .glow:nth-child(2) {
+      bottom: -200px;
+      right: -200px;
+      animation-delay: 5s;
+    }
+
+    .glow:nth-child(3) {
+      top: 20%;
+      right: 10%;
+      animation-delay: 10s;
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(80px, -50px) scale(1.2); }
+      100% { transform: translate(-50px, 80px) scale(0.9); }
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 750px;
+      height: 80px;
+      background: rgba(0, 12, 36, 0.9);
+      border: 0.5px solid white;
+      border-radius: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .logo {
+      width: 55px;
+      height: 55px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      transform: scale(1.15);
+      color: #7da2d4;
+    }
+
+    /* Hero content */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #7da2d4;
+    }
+
+    .hero-content h3 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Gorditas', cursive;
+      font-size: 120px;
+      color: #fff;
+      margin: 0 0 20px 0;
+    }
+
+    .hero-content p {
+      font-size: 32px;
+      color: #7da2d4;
+      margin: 0 0 40px 0;
+    }
+
+    .line-image {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 950px) {
+      .navbar {
+        width: 90%;
+        padding: 0 20px;
+      }
+      .nav-links {
+        gap: 30px;
+      }
+      .nav-links a {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content h3, .hero-content p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <!-- Glowing elements -->
+    <div class="glow"></div>
+    <div class="glow"></div>
+    <div class="glow"></div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <img src="Group 226.png" alt="logo">
+      </div>
+      <div class="nav-links">
+        <a href="#">about</a>
+        <a href="#">work</a>
+        <a href="#">contact</a>
+      </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h3>hello there, I’m</h3>
+      <h1>Nidhi Sapaliga</h1>
+      <p>your next favorite UI/UX Designer</p>
+      <img src="Group 228.png" alt="decorative line" class="line-image">
+    </div>
+  </section>
+</body>
+</html>

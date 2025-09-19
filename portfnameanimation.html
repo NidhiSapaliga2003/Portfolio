@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio name animation</title>
+  
+  <!-- Google Fonts for Gorditas -->
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset body margin/padding and stretch to full screen */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Hero section background */
+    .hero {
+      height: 100vh;
+      background: url("Group 233.png") no-repeat center center/cover; /* Your background */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden; /* hides animation overflow */
+    }
+
+    /* Navbar design */
+    .navbar {
+      width: 750px;
+      height: 80px;
+      background: linear-gradient(to right, #000E24, #001F6E);
+      border: 0.5px solid white;
+      border-radius: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      font-family: "Sitka", serif;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      animation: fadeInDown 1s ease forwards; /* navbar animation */
+    }
+
+    /* Logo placeholder (your star image goes here) */
+    .logo {
+      width: 55px;
+      height: 55px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Hover animation for navbar links */
+    .nav-links a:hover {
+      transform: scale(1.15);
+      color: #7da2d4; /* optional: add subtle color change */
+    }
+
+    /* Hero content container */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #7da2d4;
+      font-family: "Sitka", serif;
+      margin-top: 20px; /* pushes below navbar */
+    }
+
+    /* Greeting text animation */
+    .hero-content h3 {
+      font-size: 40px;
+      font-weight: normal;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    /* Main name text animation */
+    .hero-content h1 {
+      font-family: 'Gorditas', cursive;
+      font-size: 150px;
+      color: #fff;
+      margin: 0 0 20px 0;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.5s; /* starts after h3 */
+    }
+
+    /* Tagline animation */
+    .hero-content p {
+      font-size: 40px;
+      font-family: "Sitka", serif;
+      color: #7da2d4;
+      margin: 0 0 40px 0; /* extra margin for line image */
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1s; /* starts after h1 */
+    }
+
+    /* Placeholder for line image */
+    .line-image {
+      width: 300px; /* adjust width */
+      height: auto;
+      margin: 0 auto;
+      
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1s; /* appears last */
+    }
+
+    /* Keyframe animations */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 950px) {
+      .navbar {
+        width: 90%;
+        padding: 0 20px;
+      }
+      .nav-links {
+        gap: 30px;
+      }
+      .nav-links a {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content h3 {
+        font-size: 1.2rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero with Navbar -->
+  <section class="hero">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <!-- Replace with your logo/star -->
+        <img src="Group 226.png" alt="logo">
+      </div>
+      <div class="nav-links">
+        <a href="#">about</a>
+        <a href="#">work</a>
+        <a href="#">contact</a>
+      </div>
+    </div>
+
+    <!-- Hero text -->
+    <div class="hero-content">
+      <h3>hello there, I’m</h3>
+      <h1>Nidhi Sapaliga</h1>
+      <p>your next favorite UI/UX Designer</p>
+      <!-- Line image below tagline -->
+      <img src="Group 228.png" alt="decorative line" class="line-image">
+    </div>
+  </section>
+</body>
+</html>

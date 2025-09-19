@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Hero</title>
+  
+  <!-- Google Fonts for Gorditas -->
+  <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Hero section */
+    .hero {
+      height: 100vh;
+      background: url("Group 233.png") no-repeat center center/cover; /* Add your background image inside url("") */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #7da2d4;
+       /* light blue */
+      font-family: "Sitka", serif;
+    }
+
+    .hero-content h3 {
+      font-size: 40px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Gorditas', cursive;
+      font-size: 150px;
+      color: #fff;
+      margin: 0 0 20px 0;
+    }
+
+    .hero-content p {
+      font-size: 40px;
+      font-family: "Sitka", serif;
+      color: #7da2d4;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+
+    
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content h3 {
+        font-size: 1rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h3>hello there, I’m</h3>
+      <h1>Nidhi Sapaliga</h1>
+      <p>your next favorite UI/UX Designer</p>
+    </div>
+  </section>
+</body>
+</html>
+

@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <title>My Work Section</title>
+
+  <style>
+    /* Base Page Styling */
+    body {
+      margin: 0;
+      font-family: "Sitka", serif;
+      background: #0a1630; /* Dark navy background */
+      color: #02508c;
+    }
+
+    /* Whole Work Section */
+    .work-section {
+      padding: 50px 15%;
+      text-align: center;
+    }
+
+    /* Section Title */
+    .work-section h2 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    /* Project Cards */
+    .project-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ECECEC;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Image inside Project Card */
+    .project-img {
+      flex: 1 1 50%;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      display: block;
+    }
+
+    /* Text inside Project Card */
+    .project-text {
+      flex: 1 1 45%;
+      padding: 20px;
+    }
+
+    .project-text h3 {
+      font-size: 3.2rem;
+      margin-bottom: 0px; /* Moved up (less space below) */
+    }
+
+    .project-text p {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #120335;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      gap: 80px;
+      margin-top: 200px; /* Push buttons slightly down */
+    }
+
+    .btn {
+      padding: 10px 40px;
+      border-radius: 11px;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      background: #2b72e4;
+      color: white;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #174ba0;
+    }
+
+    /* Small Rectangles Grid */
+    .rectangles {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rectangle {
+      position: relative;
+      background: white;
+      height: 250px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rectangle img {
+      width: 90%;
+      height: 90%;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: 0.3s ease;
+    }
+
+    /* Overlay for "View on Figma" */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    /* Hover effect: darker + overlay visible */
+    .rectangle:hover img {
+      filter: brightness(60%);
+    }
+
+    .rectangle:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Responsive: Tablets */
+    @media (max-width: 900px) {
+      .project-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .project-img, .project-text {
+        flex: 1 1 100%;
+      }
+
+      .rectangles {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Responsive: Mobile */
+    @media (max-width: 600px) {
+      .rectangles {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="work-section">
+    <h2>My Work</h2>
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-img">
+        <img src="iPhone 14 & 15 Pro - 143.png" alt="Homezy App">
+      </div>
+      <div class="project-text">
+        <h3>Homezy</h3>
+        <p>Simplifying smart living with one easy control.</p>
+        <div class="btn-group">
+          <a href="h case s export.png" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=899-1740&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=4%3A28" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-img">
+        <img src="Screenshot 2025-09-14 192858.png" alt="Health Cart App">
+      </div>
+      <div class="project-text">
+        <h3>Health Cart</h3>
+        <p>Medicines, prescriptions, and doctors—simplified in one app.</p>
+        <div class="btn-group">
+          <a href="hc case study export.png" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=509-369&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=509%3A369" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <div class="project-img">
+        <img src="Screenshot 2025-09-14 192954.png" alt="UTS App Redesign">
+      </div>
+      <div class="project-text">
+        <h3>UTS App Redesign</h3>
+        <p>Cleaner, easier, more user-friendly ticket booking for Indian Railways.</p>
+        <div class="btn-group">
+          <a href="uts case study export.png" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=250-175&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=250%3A175&show-proto-sidebar=1" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <div class="project-img">
+        <img src="Screenshot 2025-09-14 193043.png" alt="Aurum Watch Website">
+      </div>
+      <div class="project-text">
+        <h3>Aurum</h3>
+        <p>A premium unisex watch website with a clean and elegant UI.</p>
+        <div class="btn-group">
+          <a href="#" class="btn">Case Study</a>
+          <a href="https://www.figma.com/proto/tUViqEost2StpSiMOkD0LS/aurum?page-id=0%3A1&node-id=1-2&t=5PmrUWXyVE7Yt5eE-0&scaling=scale-down&content-scaling=fixed" class="btn">View on Figma</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Small Rectangles Grid (6 only) -->
+    <div class="rectangles">
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 124611.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=197-371&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=197%3A371&show-proto-sidebar=1" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125718.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=4-28&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=4%3A28&show-proto-sidebar=1" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125657.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=10-71&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=4%3A28&show-proto-sidebar=1" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125633.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=94-949&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=4%3A28&show-proto-sidebar=1" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125617.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=127-126&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=4%3A28&show-proto-sidebar=1" class="overlay">View on Figma</a>
+      </div>
+      <div class="rectangle">
+        <img src="Screenshot 2025-09-14 125601.png">
+        <a href="https://www.figma.com/proto/YQeOFbvZ6pdiPTG8Vmqnpk/Untitled?page-id=0%3A1&node-id=163-446&p=f&t=Xu0FbJ5SI4xDQxAq-0&scaling=contain&content-scaling=fixed&starting-point-node-id=4%3A28&show-proto-sidebar=1" class="overlay">View on Figma</a>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About slideshow</title>
+
+  <!-- Import Sitka-like font -->
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Sitka', Georgia, serif;
+      background: #fdfdfd;
+    }
+
+    /* About Section */
+    .about-section {
+      background-image: url("bg.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 50vw;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Flex Container */
+    .about-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1100px;
+      height: 100%;
+      margin: auto;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Text Section */
+    .about-text {
+      flex: 1 1 50%;
+      color: #000E24;
+    }
+
+    .about-text h2 {
+      font-size: 60px;
+      color: #3671ca;
+      margin-top: 0;
+    }
+
+    .about-text p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Image & Button Section */
+    .about-image {
+      flex: 1 1 40%;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Slideshow Container with Rounded Corners */
+    .slideshow-container {
+      width: 300px;
+      height: 420px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 20px; /* 🔹 Rounded corners */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 🔹 Optional shadow for depth */
+    }
+
+    /* Darker Fade blur effect on sides */
+    .slideshow-container::before,
+    .slideshow-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 25px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      border-radius: 20px; /* Match rounded corners */
+    }
+
+    .slideshow-container::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0,0,0,0));
+    }
+
+    .slideshow-container::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0,0,0,0));
+    }
+
+    /* Image strip */
+    .slides {
+      display: flex;
+      width: calc(300px * 12); /* 6 original + 6 duplicate */
+      height: 100%;
+      animation: slideAnimation 35s linear infinite;
+    }
+
+    .slides img {
+      width: 300px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px; /* 🔹 Make images respect rounded corners */
+    }
+
+    /* Infinite smooth scroll */
+    @keyframes slideAnimation {
+      from { transform: translateX(0); }
+      to { transform: translateX(-1800px); } /* shift = 6 images * 300px */
+    }
+
+    /* Resume Button */
+    .resume-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 52px;
+      background: #4d9df0;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: 5px 7px #03076d;
+      transition: background 0.3s ease;
+    }
+
+    .resume-btn:hover {
+      background: #3174c1;
+    }
+
+    /* Doodle Animation */
+    .doodle {
+      position: absolute;
+      bottom: -70px;
+      left: 40px;
+      width: 100px;
+      animation: moveDoodle 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveDoodle {
+      from { transform: translateX(0); }
+      to { transform: translateX(10px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text, .about-image {
+        flex: 1 1 100%;
+      }
+
+      .doodle {
+        position: relative;
+        bottom: -10px;
+        left: auto;
+        margin: 10px auto;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-container">
+
+      <!-- Left Content -->
+      <div class="about-text">
+        <h2>ABOUT ME</h2>
+        <p>
+          Hi! I’m so glad you’re here. I’m a passionate UI/UX Designer who loves 
+          creating clean, minimal, intuitive designs that make life easier 
+          and more enjoyable.
+        </p>
+        <p>
+          With a background in marketing, I bring a strong 
+          understanding of user behavior and business needs, helping me design 
+          experiences that truly connect.
+        </p>
+        <p>
+          I’m super curious, always learning, and excited to grow, collaborate, 
+          and design products that make a real difference.
+        </p>
+      </div>
+
+      <!-- Right Content -->
+      <div class="about-image">
+        
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+          <div class="slides">
+            <!-- 🔹 Replace with your 6 images -->
+            <img src="WhatsApp Image 2025-09-11 at 11.19.32 PM 1.jpg" alt="Profile 1">
+            <img src="6d8fd30a7380b1e14aff12dc938bc4ef.jpg" alt="Profile 2">
+            <img src="Screenshot 2025-09-13 151000.png" alt="Profile 3">
+            <img src="Screenshot 2025-09-13 151222.png" alt="Profile 4">
+            <img src="Screenshot 2025-09-13 151519.png" alt="Profile 5">
+            <img src="Screenshot 2025-09-13 152344.png" alt="Profile 6">
+
+            <!-- Duplicate set for seamless loop -->
+            <img src="WhatsApp Image 2025-09-11 at 11.19.32 PM 1.jpg" alt="Profile 1">
+            <img src="6d8fd30a7380b1e14aff12dc938bc4ef.jpg" alt="Profile 2">
+            <img src="Screenshot 2025-09-13 151000.png" alt="Profile 3">
+            <img src="Screenshot 2025-09-13 151222.png" alt="Profile 4">
+            <img src="Screenshot 2025-09-13 151519.png" alt="Profile 5">
+            <img src="Screenshot 2025-09-13 152344.png" alt="Profile 6">
+          </div>
+        </div>
+
+        <!-- Resume Button -->
+        <a href="resume.pdf" class="resume-btn">View My Resume</a>
+
+        <!-- Doodle Image -->
+        <img src="Group 232.png" alt="Doodle" class="doodle">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

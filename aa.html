@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Slideshow</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff;
+      margin: 0;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      perspective: 1200px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background-size: cover;
+      background-position: center;
+      transform: scale(0.8) rotateY(60deg);
+      opacity: 0;
+      transition: all 0.8s ease-in-out;
+    }
+
+    .slide.active {
+      transform: scale(1) rotateY(0deg);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .slide.prev {
+      transform: scale(0.8) rotateY(-60deg);
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    .slide.next {
+      transform: scale(0.8) rotateY(60deg);
+      opacity: 0.6;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slideshow">
+    <div class="slide active" style="background-image: url(123.png);"></div>
+    <div class="slide next" style="background-image: url('9401c1cb-7c30-46d8-b993-d3a7134f53be.jpg');"></div>
+    <div class="slide" style="background-image: url('65b494441e8a33f35c9e1792850fc52a.jpg');"></div>
+    <div class="slide" style="background-image: url('https://picsum.photos/id/1045/500/400');"></div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide() {
+      slides.forEach(slide => slide.className = 'slide');
+
+      let prev = (index - 1 + slides.length) % slides.length;
+      let next = (index + 1) % slides.length;
+
+      slides[index].classList.add('active');
+      slides[prev].classList.add('prev');
+      slides[next].classList.add('next');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide();
+    }
+
+    setInterval(nextSlide, 3000); // auto move every 3 seconds
+    showSlide();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000; /* just to see it clearly */
+    }
+
+    .navbar {
+      width: 904px;
+      height: 124px;
+      background: linear-gradient(to right, #000E24, #001F6E);
+      border: 0.5px solid white;
+      border-radius: 62px; /* half of height to get rounded edges */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      font-family: "Sitka", serif;
+    }
+
+    /* Left placeholder for star/logo */
+    .logo {
+      width: 60px; /* adjust as needed */
+      height: 60px;
+      background: transparent;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 950px) {
+      .navbar {
+        width: 90%;
+        padding: 0 20px;
+      }
+      .nav-links {
+        gap: 30px;
+      }
+      .nav-links a {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+        gap: 20px;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="Group 226.png">
+    </div>
+    <div class="nav-links">
+      <a href="#">about</a>
+      <a href="#">work</a>
+      <a href="#">contact</a>
+    </div>
+  </div>
+</body>
+</html>

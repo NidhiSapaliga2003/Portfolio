@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 (supports all languages/symbols) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes layout responsive for mobile -->
+  <title>Skills Section</title> <!-- Title shown in browser tab -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: "Sitka", serif;
+      background: url("bg.jpg") no-repeat center center/cover;
+    }
+
+    .skills-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    /* Left side text container */
+    .skills-text {
+      flex: 1;
+      max-width: 45%;
+      padding-left: 50px; /* 🔹 Shifts text 50px to the right */
+    }
+
+    .skills-text h2 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+      color: #0e58a1;
+    }
+
+    .skills-text p {
+      font-size: 2rem;
+      color: #474747;
+      line-height: 1.2;
+    }
+
+    /* Right side image container */
+    .skills-visual {
+      flex: 1;
+      max-width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skills-placeholder img {
+      width: 100%;
+      max-width: 1500px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .skills-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .skills-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+        padding-left: 0; /* Remove shift on small screens */
+      }
+      .skills-visual {
+        max-width: 100%;
+      }
+      .skills-placeholder img {
+        width: 60%;
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="skills-section">
+    <!-- Left Side Text -->
+    <div class="skills-text">
+      <h2>SKILLS</h2>
+      <p>Here’s what I bring <br>to the table to help <br>you meet your goals.</p>
+    </div>
+
+    <!-- Right Side Image -->
+    <div class="skills-visual">
+      <div class="skills-placeholder">
+        <img src="Group 237.png" alt="Skills Illustration">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
